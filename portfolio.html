@@ -6,7 +6,7 @@
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <style>
-            ul {
+            .nav ul {
                 list-style-type: none;
                 margin: 0;
                 padding: 0;
@@ -14,11 +14,11 @@
                 background-color: #333;
             }
     
-            li {
+            .nav li {
                 float: left;
             }
     
-            li a {
+            .nav li a {
                 display: block;
                 color: white;
                 text-align: center;
@@ -26,7 +26,7 @@
                 text-decoration: none;
             }
     
-            li a:hover:not(.active) {
+            .nav li a:hover:not(.active) {
                 background-color: #111;
             }
     
@@ -34,20 +34,22 @@
                 background-color: #4CAF50;
             }
     
-            img {
-                display: block;
-                margin-left: auto;
-                margin-right: auto;
-                border-radius: 50%;
-            }
+            
     
             div.relative {
                 position: relative;
                 top: 100px;
             }
+            .left {
+                position: absolute;
+                left: 0px;
+                
+                padding: 10px;
+            }
         </style>
     </head>
     <body style="background-color:powderblue;">
+    <div class="nav">
     <ul>
         <li><a href="home.html">SATYANARAYANA REDDY JONNAKUTI</a></li>
         <li style="float:right"><a href="contact_me.html">CONTACT ME</a></li>
@@ -55,7 +57,61 @@
         <li style="float:right"><a href="qualifications.html">QUALIFICATIONS</a></li>
         <li style="float:right"><a href="portfolio.html">ABOUT</a></li>
     </ul>
-        
+    </div>
+    <br>
+    <div class="left">
+        <img src="professional.jpg" alt="Professional Image" width="350" height="350">
+    
+    
+    <h2>Career Objective:</h2>
+    <p style="font-size: 20px">
+        To acquire a challenging position in an organization where I can best utilize my skills and education to benefit mutual
+        growth and Success.
+
+    </p>
+    <h2>Strengths:</h2>
+    <ul style="font-size: 20px">
+        <li>Patience</li>
+        <li>Public Speaking</li>
+        <li>Creative Thinking</li>
+        <li>Adapting to situations</li>
+    </ul>
+    <h2>Hobbies:</h2>
+    <table style="border-spacing:50px;">
+        <tr>
+            <th><img src="food.jpg" alt="Professional Image" width="350" height="350"></th>
+            <td style="font-size: 30px;">Eating Food</td>
+    
+        </tr>
+        <tr>
+            <th><img src="baby_sit.jpg" alt="Professional Image" width="350" height="350"></th>
+            <td style="font-size: 30px;">Baby Sitting</td>
+    
+        </tr>
+        <tr>
+            <td>
+                <video width="320" height="240" controls autoplay>
+                    <source src="dance.mp4" type="video/mp4">
+                </video>
+            </td>
+            <td style="font-size: 30px;">Dance</td>
+    
+        </tr>
+        <tr>
+            <th><img src="arts.jpg" alt="Professional Image" width="350" height="350"></th>
+            <td style="font-size: 30px;">Arts</td>
+        </tr>
+        <tr>
+            <th><img src="blessings.jpg" alt="Professional Image" width="350" height="350"></th>
+            <td style="font-size: 30px;">Giving Suggestions</td>
+        </tr>
+
+    
+    
+    </table>
+    <h2>Address:</h2>
+    <p style="font-size: 20px">16-11-477/B,<br>Yadagiri Apartments,<br>F-404,4th Floor,<br>beside Baptist Church,<br>Moosarambagh,<br>Hyderabad-36</p>
+    </div>
         
 
         
