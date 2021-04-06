@@ -5,8 +5,9 @@
     </title>
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
         <style>
-            ul {
+            .nav ul {
                 list-style-type: none;
                 margin: 0;
                 padding: 0;
@@ -14,11 +15,11 @@
                 background-color: #333;
                 }
 
-            li {
+            .nav li {
                 float: left;
                 }
 
-            li a {
+            .nav li a {
                 display: block;
                 color: white;
                 text-align: center;
@@ -26,7 +27,7 @@
                 text-decoration: none;
                 }
 
-            li a:hover:not(.active) {
+            .nav li a:hover:not(.active) {
                 background-color: #111;
                 }
 
@@ -43,15 +44,23 @@
                         position: relative;
                         top: 100px;
                         }
+            @media screen and (max-width: 600px) {
+            .nav a {
+                    float: none;
+                    width: 100%;
+                }
+            }
         </style>
     </head>
     <body style="background-color:powderblue;">
+        <div class="nav">
         <ul>
-            <li><a href="index.html">SATYANARAYANA REDDY JONNAKUTI</a></li>
-            <li style="float:right"><a href="#news">CONTACT ME</a></li>
-            <li style="float:right"><a href="#contact">BLOGS</a></li>
-            <li style="float:right"><a href="portfolio.html">PORTFOLIO</a></li>
+            <li><a href="index.html" >SATYANARAYANA REDDY JONNAKUTI</a></li>
+            <li style="float:right" ><a href="#news">CONTACT ME</a></li>
+            <li style="float:right" ><a href="#contact">BLOGS</a></li>
+            <li style="float:right" ><a href="portfolio.html">PORTFOLIO</a></li>
         </ul>
+        </div>
         <!-- <h1 style="text-align: center;"><b><u>Portfolio</u> </b></h1> -->
         <div class="relative">
             <img src="profile.jpeg" alt="profile picture" width="200" height="200">
@@ -60,7 +69,7 @@
             <h4 style="text-align: center;">Student at MSIT-IIITH . Cricket Lover . Devil's Advocate</h4>
         </div>
         
-        
+            
 
         
     </body>
