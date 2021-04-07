@@ -40,12 +40,18 @@
                 position: relative;
                 top: 100px;
             }
-            .left {
-                position: absolute;
-                left: 0px;
-                
-                padding: 10px;
+            .right img {
+            padding-top: 20px;
+            padding-right: 30px;
+            position: absolute;
+            right: 0px;
             }
+            .card {
+                box-shadow: 0 4px 5px 0 rgba(0,0,0,0.2);
+                transition: 0.3s;
+                width: 240;
+                padding: 2px 16px;
+                }
         </style>
     </head>
     <body style="background-color:powderblue;">
@@ -59,16 +65,17 @@
     </ul>
     </div>
     <br>
-    <div class="left">
+    <div class="right">
         <img src="professional.jpg" alt="Professional Image" width="350" height="350">
     
-    
+    </div>
     <h2>Career Objective:</h2>
     <p style="font-size: 20px">
         To acquire a challenging position in an organization where I can best utilize my skills and education to benefit mutual
         growth and Success.
 
     </p>
+    <br>
     <h2>Strengths:</h2>
     <ul style="font-size: 20px">
         <li>Patience</li>
@@ -76,42 +83,60 @@
         <li>Creative Thinking</li>
         <li>Adapting to situations</li>
     </ul>
+    <br>
     <h2>Hobbies:</h2>
-    <table style="border-spacing:50px;">
-        <tr>
-            <th><img src="food.jpg" alt="Professional Image" width="350" height="350"></th>
-            <td style="font-size: 30px;">Eating Food</td>
-    
-        </tr>
-        <tr>
-            <th><img src="baby_sit.jpg" alt="Professional Image" width="350" height="350"></th>
-            <td style="font-size: 30px;">Baby Sitting</td>
-    
-        </tr>
+    <table align="center" style="border-spacing:10px;">
         <tr>
             <td>
-                <video width="320" height="240" controls autoplay>
-                    <source src="dance.mp4" type="video/mp4">
-                </video>
+            <div class="card">
+                <img src="food.jpg" alt="food" width="240" height="240">
+                <h4 align="center"><b>Eating Food</b></h4>
+            </div>
             </td>
-            <td style="font-size: 30px;">Dance</td>
-    
+            <td>
+                <div class="card">
+                    <img src="baby_sit.jpg" alt="food" width="240" height="240">
+                    <h4 align="center"><b>Baby Sitting</b></h4>
+                </div>
+            </td>
+            <td>
+                <div class="card">
+                    <video width="240" height="240" controls autoplay muted>
+                        <source src="dance.mp4" type="video/mp4">
+                    </video>
+                    <h4 align="center"><b>Dance</b></h4>
+                </div>
+            </td>
         </tr>
-        <tr>
-            <th><img src="arts.jpg" alt="Professional Image" width="350" height="350"></th>
-            <td style="font-size: 30px;">Arts</td>
-        </tr>
-        <tr>
-            <th><img src="blessings.jpg" alt="Professional Image" width="350" height="350"></th>
-            <td style="font-size: 30px;">Giving Suggestions</td>
-        </tr>
+        <!-- <img src="food.jpg" alt="Professional Image" width="350" height="350"></td>
+                    <td style="font-size: 30px;">Eating Food</td> -->
 
-    
-    
+        <tr>
+            <td>
+                <div class="card">
+                    <video width="240" height="240" controls autoplay muted>
+                        <source src="cooking.mp4" type="video/mp4">
+                    </video>
+                    <h4 align="center"><b>Cooking</b></h4>
+                </div>
+            </td>
+            <td>
+                <div class="card">
+                    <img src="arts.jpg" alt="food" width="240" height="240">
+                    <h4 align="center"><b>Arts</b></h4>
+                </div>
+            </td>
+            <td>
+                <div class="card">
+                    <img src="blessings.jpg" alt="food" width="240" height="240">
+                    <h4 align="center"><b>Giving Suggestions</b></h4>
+                </div>
+            </td>
+        </tr>
     </table>
     <h2>Address:</h2>
     <p style="font-size: 20px">16-11-477/B,<br>Yadagiri Apartments,<br>F-404,4th Floor,<br>beside Baptist Church,<br>Moosarambagh,<br>Hyderabad-36</p>
-    </div>
+    
         
 
         
