@@ -6,32 +6,36 @@
     <title>Portfolio with bootstrap</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
 
 <body style="background-color:powderblue;">
 
-    <nav class="navbar navbar-inverse">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="#">SATYANARAYANA REDDY JONNAKUTI</a>
-            </div>
-            <ul class="nav navbar-nav navbar-right">
-                <li class="active"><a href="#">ABOUT</a></li>
-                <li><a href="#">QUALIFICATIONS</a></li>
-                <li><a href="#">PROJECTS</a></li>
-                <li><a href="#">CONTACT ME</a></li>
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #141212;">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03"
+            aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand" href="home.html">SATYANARAYANA REDDY JONNAKUTI</a>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+            <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+                <li class="nav-item active"><a class="nav-link" href="portfolio_bootstrap.html">ABOUT <span
+                            class="sr-only">(current)</span></a></li>
+                <li class="nav-item"><a class="nav-link" href="qualifications_bootstrap.html">QUALIFICATIONS</a></li>
+                <li class="nav-item"><a class="nav-link" href="projects_bootstrap.html">PROJECTS</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact_me_bootstrap.html">CONTACT ME</a></li>
             </ul>
         </div>
     </nav>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-sm-3">
+            <div class="col-sm-3" style="padding-top: 1%;">
                 <img src="professional.jpg" alt="Professional Image" width="350" height="350">
             </div>
-            <div class="col-sm-9">
+            <div class="col-sm-9" style="padding-top: 3%; padding-left: 3%;">
                 <h2>Career Objective:</h2>
                 <p style="font-size: 20px">
                     To acquire a challenging position in an organization where I can best utilize my skills and education to benefit
@@ -61,16 +65,16 @@
                 <div class="card" style="width:240px">
                     <img class="card-img-top" src="food.jpg" alt="Card image" width="240" height="240">
                     <div class="card-body">
-                        <h4 class="card-title text-center">Eating Food</h4>
+                        <h5 class="card-title text-center">Eating Food</h5>
                     </div>
             </div>
             
             </div>
-            <div class="col-sm-2">
+            <div class="col-sm-2" >
                 <div class="card" style="width:240px">
                     <img class="card-img-top" src="baby_sit.jpg" alt="Card image" width="240" height="240">
                     <div class="card-body">
-                        <h4 class="card-title text-center">Baby Sitting</h4>
+                        <h5 class="card-title text-center">Baby Sitting</h5>
                     </div>
                 </div>
             </div>
@@ -80,7 +84,7 @@
                             <source src="dance.mp4" type="video/mp4" >
                         </video>
                         <div class="card-body">
-                            <h4 class="card-title text-center">Dance</h4>
+                            <h5 class="card-title text-center">Dance</h5>
                         </div>
                     </div>
                 </div>
@@ -90,7 +94,7 @@
                         <source src="cooking.mp4" type="video/mp4" >
                     </video>
                     <div class="card-body">
-                        <h4 class="card-title text-center">Cooking</h4>
+                        <h5 class="card-title text-center">Cooking</h5>
                     </div>
                     </div>
                 </div>
@@ -98,7 +102,7 @@
                         <div class="card" style="width:240px">
                             <img class="card-img-top" src="arts.jpg" alt="Card image" width="240" height="240">
                             <div class="card-body">
-                                <h4 class="card-title text-center">Arts</h4>
+                                <h5 class="card-title text-center">Arts</h5>
                             </div>
                         </div>
                     </div>
@@ -106,7 +110,7 @@
                         <div class="card" style="width:240px">
                             <img class="card-img-top" src="blessings.jpg" alt="Card image" width="240" height="240">
                             <div class="card-body">
-                                <h4 class="card-title text-center">Giving Suggestions</h4>
+                                <h5 class="card-title text-center">Giving Suggestions</h5>
                             </div>
                         </div>
                     </div>

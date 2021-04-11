@@ -5,34 +5,12 @@
     </title>
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
         <style>
-            ul {
-                list-style-type: none;
-                margin: 0;
-                padding: 0;
-                overflow: hidden;
-                background-color: #333;
-                }
-
-            li {
-                float: left;
-                }
-
-            li a {
-                display: block;
-                color: white;
-                text-align: center;
-                padding: 14px 16px;
-                text-decoration: none;
-                }
-
-            li a:hover:not(.active) {
-                background-color: #111;
-                }
-
-            .active {
-                background-color: #4CAF50;
-                }
+            
             img {
                 display: block;
                 margin-left: auto;
@@ -46,13 +24,29 @@
         </style>
     </head>
     <body style="background-color:powderblue;">
-        <ul>
+        <!-- <ul>
             <li><a href="home.html">SATYANARAYANA REDDY JONNAKUTI</a></li>
             <li style="float:right"><a href="contact_me.html">CONTACT ME</a></li>
-            <!-- <li style="float:right"><a href="home.html">BLOGS</a></li> -->
+            <li style="float:right"><a href="home.html">BLOGS</a></li>
             <li style="float:right"><a href="portfolio.html">PORTFOLIO</a></li>
-        </ul>
+        </ul> -->
         <!-- <h1 style="text-align: center;"><b><u>Portfolio</u> </b></h1> -->
+        <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #141212;">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03"
+                aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand" href="home.html">SATYANARAYANA REDDY JONNAKUTI</a>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+                <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+                    <li class="nav-item active"><a class="nav-link" href="portfolio_bootstrap.html">ABOUT <span
+                                class="sr-only">(current)</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="qualifications_bootstrap.html">QUALIFICATIONS</a></li>
+                    <li class="nav-item"><a class="nav-link" href="projects_bootstrap.html">PROJECTS</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact_me_bootstrap.html">CONTACT ME</a></li>
+                </ul>
+            </div>
+        </nav>
         <div class="relative">
             <img src="profile.jpeg" alt="profile picture" width="200" height="200">
             <h1 style="text-align: center;">SATYANARAYANA REDDY JONNAKUTI</h1>
