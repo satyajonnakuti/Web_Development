@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<head>
+<meta charset="UTF-8">
+  <title>JS Drum Kit</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body background="blue">
+<main>
+
+  <section class="main-wrapper">
+
+    <h1 class="main-title"> Jayasurya Music Academy</h1>
+    <div class="drum-kit-wrapper">
+    
+      <button class="key snare" onclick="a_img ();">a</button>
+      <button class="key kick" onclick="b_img ();">b</button>
+      <button class="key kick2" onclick="c_img ();">c</button>
+      <button class="key tom-high" onclick="d_img ();">d</button>
+      <button class="key tom-mid" onclick="e_img ();">e</button>
+      <button class="key tom-low" onclick="f_img ();">f</button>
+      <button class="key crash" onclick="g_img ();">g</button>
+      <button class="key ride" onclick="h_img ();">h</button>
+      <button class="key hihat-open" onclick="i_img ();">i</button>
+      <button class="key hihat-close" onclick="j_img ();">j</button>
+      <img class="drum-kit" src="img/drum_image.jfif" alt="Drum Kit" />
+      <img id="crash-ride" class="crash-cymbal" src="img/crash.png" alt="Crash cymbal">
+      <img id="hihat-top" class="hihat-top-cymbal" src="img/hihat-top.png" alt="Hi Hat cymbal">
+      <img id="jaya1" class="jaya" src="img/jaya3.png" alt="jaya3">
+      <img class="jaya1" src="img/jaya13.png" alt="jaya3">
+      <video controls class="jaya2">
+        <source src="img/video1.mp4" type="video/mp4">
+      </video>
+    </div>
+  </section>
+</main>
+   
+  <script>
+noOfDrums = document.querySelectorAll(".key").length;
+    for(let i=0 ; i<noOfDrums ; i++){
+        console.log(document.querySelectorAll(".key")[i]);
+        document.querySelectorAll(".key")[i].addEventListener("click", function(){
+            let alpha= this.innerHTML;
+            makeSound(alpha);
+            
+        });
+    }
+
+    //button animation//
+
+  
+
+    //for sound effect//
+
+    function makeSound(alpha) {
+        switch (alpha) {
+            case "a":
+                    let snare = new Audio("sounds/key_snare.wav");
+                    snare.play();
+                break;
+            
+            case "b":
+                    let kick1 = new Audio("sounds/key_kick.wav");
+                    kick1.play();
+                break;
+
+            case "c":
+                    let kick2 = new Audio("sounds/key_kick2.wav");
+                    kick2.play();
+                break;
+          
+              case "d":
+                let tomhigh = new Audio("sounds/key_tom-high.wav");
+                tomhigh.play();
+                break;
+          
+              case "e":
+                let tommid = new Audio("sounds/key_tom-mid.wav");
+                tommid.play();
+                break;
+          
+              case "f":
+                let tomlow = new Audio("sounds/key_tom-low.wav");
+                tomlow.play();
+                break;
+          
+              case "g":
+                let keycrash = new Audio("sounds/key_crash.wav");
+                keycrash.play();
+                break;
+              case "h":
+                let ride = new Audio("sounds/key_ride.wav");
+                ride.play();
+                break;
+              case "i":
+                let hithato = new Audio("sounds/key_hihat-open.wav");
+                hithato.play();
+                break;
+              case "j":
+                let hihatc = new Audio("sounds/key_hihat-close.wav");
+                hihatc.play();
+                break;
+        }
+    }
+
+    //detect keyboard press
+
+    
+document.addEventListener("keypress", function (event) {
+  makeSound(event.key);
+  
+}
+);
+
+function a_img(){
+  document.getElementById('jaya1')
+    .src = "img/jaya1.png";
+}
+  function b_img() {
+    document.getElementById('jaya1')
+      .src = "img/jaya2.png";
+  }
+  function c_img() {
+    document.getElementById('jaya1')
+      .src = "img/jaya4.png";
+  }
+  function d_img() {
+    document.getElementById('jaya1')
+      .src = "img/jaya5.png";
+  }
+  function e_img() {
+    document.getElementById('jaya1')
+      .src = "img/jaya6.png";
+  }
+  function f_img() {
+    document.getElementById('jaya1')
+      .src = "img/jaya7.png";
+  }
+  function g_img() {
+    document.getElementById('jaya1')
+      .src = "img/jaya8.png";
+  }
+  function h_img() {
+    document.getElementById('jaya1')
+      .src = "img/jaya9.png";
+  }
+  function i_img() {
+    document.getElementById('jaya1')
+      .src = "img/jaya10.png";
+  }
+  function j_img() {
+    document.getElementById('jaya1')
+      .src = "img/jaya11.png";
+  }
+</script>
+<br>
+<img src="img/wood2.jpg" alt="wood1" width="100%">
+</body>
+</html>
