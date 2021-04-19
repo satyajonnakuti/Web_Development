@@ -1,92 +1,11 @@
-[
-    {
-        "question": "What is the full form of Ajax?",
-        "choices": [
-            "Asynchronous JavaScript And XML",
-            "Asynchronous jQuery And XML",
-            "Asynchronous JavaScript And XHTML",
-            "Asynchronous jQuery And XHTML"
-        ],
-        "correctAnswer": 0
-    },
-    {
-        "question": "In AJAX you can ",
-        "choices": [
-            "Update a web page without reloading the page",
-            "Receive data from a server - after the page has loaded",
-            "Send data to a server - in the background",
-            "All of the above"
-        ],
-        "correctAnswer": 3
-    },
-    {
-        "question": "What is the name of the object used for AJAX request?",
-        "choices": [
-            "HttpRequest",
-            "xmlRequest",
-            "XMLHTTPRequest",
-            "Request"
-        ],
-        "correctAnswer": 2
-    },
-    {
-        "question": "Ajax is a…",
-        "choices": [
-            "Programing Language",
-            "Technology",
-            "OOPs concepts",
-            "Options B and C"
-        ],
-        "correctAnswer": 1
-    },
-    {
-        "question": "Implementing AJAX in our websites we can make our web pages ________ ?",
-        "choices": [
-            "More Dynamic",
-            "More interactive and faster ",
-            "More Responsive",
-            "Easy to connect web page with server"
-        ],
-        "correctAnswer": 1
-    },
-    {
-        "question": "AJAX allows web page to dynamically",
-        "choices": [
-            "Change content",
-            "Reload at times",
-            "Control other pages",
-            "Connect to other addresses"
-        ],
-        "correctAnswer": 0
-    },
-    {
-        "question": "_____ Of the following technologies, which one provides the ability to dynamically interact with Web page layout?",
-        "choices": [
-            "XML",
-            "HTML",
-            "JavaScript",
-            "Document Object Model"
-        ],
-        "correctAnswer": 3
-    },
-    {
-        "question": "What does the XMLHttpRequest object accomplish in Ajax?",
-        "choices": [
-            "It provides the ability to asynchronously exchange data between Web browser and a Web server",
-            "It's the programming language used to develop Ajax applications",
-            "It provides the ability to markup and style the display of web-page text",
-            "It provides a means of exchanging structured data between the Web server and client"
-        ],
-        "correctAnswer": 0
-    },
-    {
-        "question": " What two main structures compose JSON?",
-        "choices": [
-            "Key and value",
-            "Class and Object",
-            "Arrays and Objects",
-            "None of the above"
-        ],
-        "correctAnswer": 0
-    }
+[ {"question":"77+23=______","choices":["5","6","110",3],"correctAnswer": 3},
+ {"question":"64+36=______","choices":["5","36","110",3],"correctAnswer": 3},
+{"question":"11+89=______","choices":["5","89","110",3],"correctAnswer": 3},
+{"question":"84+16=______","choices":["5","66","110",3],"correctAnswer": 3},
+{"question":"11+9+80=______","choices":["50","90","110",3],"correctAnswer": 3},
+{"question":"82+9+3+6=______","choices":["5","80","110",3],"correctAnswer": 3},
+{"question":"69+31=______","choices":["50","69","110",3],"correctAnswer": 3},
+{"question":"10+11+22+33+24=______","choices":["5","220","110",3],"correctAnswer": 3},
+{"question":"11+35+8+46=______","choices":["5","90","110",3],"correctAnswer": 3},
+{"question":"77+230+100+0=______","choices":["5","0","110",3],"correctAnswer": 3},
 ]
