@@ -15,7 +15,7 @@ function saveLogin()
 }
 function nextPage(qid, name, type, page)
 {
-    if(type == "radio" && qid == "q1"){
+    if(qid == "q1"){
         ql = document.getElementsByName(name)
         for(let i = 0; i < ql.length; i++)
         {
@@ -173,6 +173,8 @@ displayroll = localStorage.getItem("rollnum")
 displayscore = localStorage.getItem("score")
 console.log(displayname, score, displayroll)
 document.getElementById("setUname").innerHTML = displayname + " - "+displayroll
-document.getElementById("result").innerHTML="Score: "+ displayscore
+document.getElementById("result").innerHTML="Score: "+ displayscore +"/10"
+document.getElementById("correct").innerHTML = "Correct: " + displayscore
+document.getElementById("wrong").innerHTML = "Wrong: " + (10-displayscore)
 // document.getElementById("attempted").innerHTML="Attempted: "+ attempt
 // document.getElementById("result").innerHTML = "Score: "+displayscore+"/3"
