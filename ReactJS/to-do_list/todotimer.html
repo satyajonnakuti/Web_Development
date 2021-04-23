@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+    <head>
+        <title>
+
+        </title>
+        <script src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+        <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+        <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+   
+    <style>
+        #size{
+            width:100%;
+            
+        }
+        .card{
+            background-color: rgb(163, 216, 216);
+        }
+        
+    </style>
+   
+   
+   
+    </head>
+    <body>
+    <div id="mydiv" style="padding: 2%;"></div>
+    
+
+    <script type="text/babel">
+        class Hello extends React.Component{
+            constructor(props){
+                super(props);
+                this.state={
+                    tasks:[],
+                    input:""};
+                
+            }
+            
+            render(){
+                // var result = tasks.length;
+                return(
+                    
+                    
+
+                <div>
+
+                    <div class="card text-center">
+                        <div class="card-header">
+                            <h1>Tasks To-Do</h1> 
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <div>
+                                    <input id="cleartext" onChange={this.handleChange.bind(this)} value={this.state.input}/>
+                                    <button onClick={this.addTask.bind(this)} class="bg-success"> Add Task</button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    Pending Tasks = {this.state.tasks.length} 
+                                    
+                                </div> 
+                            </h5>
+    
+                    <table id="size" class="table table-striped table-hover-text-center bg-light">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">S.No</th>
+                                            <th scope="col">Task</th>
+                                            <th scope="col">Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {this.state.tasks.map((task, index) =>
+                                        <tr key={index} class="bg-warning">
+                                        <td> {index + 1}</td>
+                                        <td> {task}</td>
+                                        <td>
+                                            <button value={index} onClick={this.remove_to_do_task.bind(this)} class="bg-danger">Delete</button>
+                                        </td>
+                                        </tr>
+                                        )}
+                                        
+                                    </tbody>
+                                </table>          
+                            
+                        </div>
+        
+                    </div>
+                    
+                   
+                
+                </div>
+            
+                );
+            }
+
+            remove_to_do_task=(e)=>{
+                var index =e.target.value
+                var tasks_list= this.state.tasks.splice(index, 1);
+                this.setState({tasks: this.state.tasks});
+            }
+
+
+            handleChange=(event)=>{
+                var input=event.target.value;
+
+                this.setState({input:input})
+
+            }
+            addTask=(event)=>{
+
+                this.setState(state=>({
+                    tasks:[...state.tasks,state.input],input:""  
+                }))
+                if (this.timer == 0 && this.state.seconds > 0) {
+                        this.timer = setInterval(this.countDown, 1000);
+                }
+                
+                
+                
+                var input=event.target.value="";
+                this.setState({timer})
+                reset();
+               
+               
+
+            }
+            
+    secondsToTime(secs){
+    let hours = Math.floor(secs / (60 * 60));
+
+    let divisor_for_minutes = secs % (60 * 60);
+    let minutes = Math.floor(divisor_for_minutes / 60);
+
+    let divisor_for_seconds = divisor_for_minutes % 60;
+    let seconds = Math.ceil(divisor_for_seconds);
+
+    let obj = {
+      "h": hours,
+      "m": minutes,
+      "s": seconds
+    };
+    return obj;
+  }
+
+  componentDidMount() {
+      
+    let timeLeftVar = this.secondsToTime(this.state.seconds);
+    this.setState({ time: timeLeftVar });
+  }
+
+  startTimer() {
+    if (this.timer == 0 && this.state.seconds > 0) {
+      this.timer = setInterval(this.countDown, 1000);
+
+    }
+  }
+  reset(){
+    var t=event.target.value=0;
+    this.setState(this.timer)
+    var min=event.target.value={};
+    this.setState({time : {}})
+    var sec=event.target.value=3;
+    this.setState({seconds: 3})
+  }
+  countDown() {
+    // Remove one second, set state so a re-render happens.
+    let seconds = this.state.seconds - 1;
+    this.setState({
+      time: this.secondsToTime(seconds),
+      seconds: seconds,
+    });
+    
+    // remove_to_do_task(index);
+    // Check if we're at zero.
+    if (seconds == 0) { 
+        
+        clearInterval(this.timer);
+        
+        reset();
+    //   
+    }
+    
+
+  }      
+        }
+        
+        ReactDOM.render(<Hello/>, document.querySelector("#mydiv"));
+    
+    </script>
+    </body>
+</html>
