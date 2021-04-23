@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://unpkg.com/react@16/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <title>Sign up</title>
+  </head>
+  <body>
+    <!-- <h1>Hello, world!</h1> -->
+    <div class="container ">
+      <div class="row">
+          <div class="col-sm-4"></div>
+        <div class="col-lg-4">
+          <div id="disp"></div>
+        </div>
+        <div class="col-sm-4"></div>
+      </div>
+    </div>
+
+    <script type="text/babel">
+      class Signin extends React.Component {
+        constructor(props) {
+          super(props);
+          this.state = {
+            name: "",
+            password: "",
+            email:"",
+            mobile:"",
+            dob:""
+          };
+        }
+        render() {
+          return (
+            
+            <div class="container bg-info">
+              <br />
+              <h1 class="text-center">MSIT-Calculator Login Page</h1>
+              <div class="row">
+                <div class="col">
+                  <label >
+                    User Name
+                  </label>
+                  <input type="text" onChange={this.readname} value={this.state.name} class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
+                  <label for="inputPassword5" class="form-label">
+                    Password
+                  </label>
+                  <input type="password" onChange={this.readpass} value={this.state.pass} id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock" />
+                  <div id="passwordHelpBlock" class="form-text text-danger">
+                    Your password must be 8-20 characters long, contain letters
+                    and numbers, and must not contain spaces, special
+                    characters, or emoji.
+                  </div>
+
+
+                  <label >E-Mail</label>    
+                  <input type="text" onChange={this.reademail} class="form-control"/>
+                  <label >Mobile Number</label>    
+                  <input type="number" onChange={this.mobile} class="form-control"/>
+                    <label >Date of birth</label>
+                  <input type="date" onChange={this.readdob} value={this.state.name} class="form-control" />
+                  <button type="button" onClick={this.welcome} class="btn btn-primary mt-3 bg-success">Create account</button>
+                  <a class="btn btn-primary ms-5 mt-3 bg-dark" href="sign-in.html" role="button">Sign in </a>
+                </div>
+              </div>
+              <br/>
+            </div>
+          );
+        }
+
+        welcome = (event) =>{
+            ReactDOM.render(<Message name={this.state.name} />, document.getElementById("disp"));
+        };
+        
+
+        readname = (event) => {
+          this.setState({
+            name: event.target.value,
+          });
+        };
+
+        readpass = (event) => {
+          this.setState({
+            password: event.target.value,
+          });
+        };
+
+        reademail = (event) => {
+          this.setState({
+            email: event.target.value,
+          });
+        };
+
+        readmobile = (event) => {
+          this.setState({
+            mobile: event.target.value,
+          });
+        };
+
+        readdob = (event) => {
+          this.setState({
+            dob: event.target.value,
+          });
+        };
+      }
+
+      ReactDOM.render(<Signin />, document.getElementById("disp"));
+
+
+      class Message extends React.Component{
+          render(){
+              return (
+                <div>
+                    <h2>Welcome {this.props.name} your account has been created</h2>   
+                    <a class="btn btn-primary ms-5 mt-3 bg-success" href="sign-in.html" role="button"> Click here to Sign in </a> 
+                </div>
+              );
+          }
+      }
+    </script>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>

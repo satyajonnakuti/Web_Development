@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://unpkg.com/react@16/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <title>Sign in</title>
+  </head>
+  <body>
+    <!-- <h1>Hello, world!</h1> -->
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <div id="disp"></div>
+        </div>
+      </div>
+    </div>
+
+    <script type="text/babel">
+      class Signin extends React.Component {
+        constructor(props) {
+          super(props);
+          this.state = {
+            name: "",
+            password: "",
+          };
+        }
+        render() {
+          return (
+            
+            <div class="container">
+              <h1 class="text-center">MSIT-Calculator Login Page</h1>
+              <div class="row bg-light">
+                
+                <div class="col-md-4 offset-md-4">
+                  <label >
+                    User Name
+                  </label>
+                  <input
+                    type="text"
+                    onChange={this.readName}
+                    value={this.state.name}
+                    class="form-control"
+                    id="exampleInputEmail1"
+                    aria-describedby="emailHelp"
+                  />
+                  <label for="inputPassword5" class="form-label">
+                    Password
+                  </label>
+                  <input
+                    type="password"
+                    onChange={this.readPass}
+                    value={this.state.pass}
+                    id="inputPassword5"
+                    class="form-control"
+                    aria-describedby="passwordHelpBlock"
+                  />
+                  <button type="button" onClick={this.welcome} class="btn btn-primary ms-5 mt-3">Sign in</button>
+                  <a class="btn btn-primary ms-5 mt-3" href="sign-up.html" role="button">Sign Up </a>
+                  </div>
+              </div>
+              <div class="row">
+
+                <div class="col">
+                  <br/>
+                  <img src="calc.png" class="img-fluid" alt="Responsive image"/>
+                  </div>
+              </div>
+            </div>
+          );
+        }
+
+        welcome = (event) =>{
+            ReactDOM.render(<Message name={this.state.name} />, document.getElementById("disp"));
+        };
+        readName = (event) => {
+            console.log(this.state.name);
+            this.setState({
+
+            name: event.target.value,
+          });
+          console.log(this.state.name);
+        };
+
+        readPass = (event) => {
+          this.setState({
+            password: event.target.value,
+          });
+        };
+      }
+
+      ReactDOM.render(<Signin />, document.getElementById("disp"));
+
+
+      class Message extends React.Component{
+          render(){
+              return (
+                <div>
+                    <h2>Welcome {this.props.name}</h2>    
+                </div>
+              );
+          }
+      }
+    </script>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>

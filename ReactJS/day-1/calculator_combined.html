@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous" />
+
+</head>
+
+<body>
+    <div id="bmi">
+
+    </div>
+    <script type="text/babel">
+        class Bmi extends React.Component {
+            result() {
+                var wt = document.getElementById("input1").value;
+                var ht = document.getElementById("input2").value;
+                var weig = Number(wt);
+                var heig = Number(ht);
+                // alert("hi");
+                if (heig != 0) {
+                    var res = (weig / (heig * heig)).toFixed(2);
+                    var cate = "";
+                    if (res < 18.5) {
+                        cate = "UNDER WEIGHT";
+                    }
+                    else if (res > 18.5 && res < 24.9) {
+                        cate = "NORMAL WEIGHT";
+                    }
+                    else if (res > 24.9 && res < 29.9) {
+                        cate = "OVER WEIGHT";
+                    }
+                    else {
+                        cate = "OBESE";
+                    }
+                    // alert(res);
+                    document.getElementById("resu").innerHTML = '<br><center><b>YOUR BMI: </b>' + res + '</center>';
+                    document.getElementById("resu").innerHTML += '<br><center><b>CATEGORY: </b>' + cate + '</center>';
+                }
+                else {
+                    document.getElementById("resu").innerHTML = '<br><center><b>CANNOT CALCULATE BMI</b></center>';
+                    document.getElementById("resu").innerHTML += '<br><center><b>GIVE PROPER WEIGHT AND HEIGHT</b></center>';
+                }
+            }
+            addition() {
+                var num1 = document.getElementById("input3").value;
+                var num2 = document.getElementById("input4").value;
+                var n1 = Number(num1);
+                var n2 = Number(num2);
+                var res1 = n1 + n2;
+                document.getElementById("reslt").innerHTML = '<br><center><b>RESULT: </b>' + res1 + '</center>';
+            }
+            substraction() {
+                var num1 = document.getElementById("input3").value;
+                var num2 = document.getElementById("input4").value;
+                var n1 = Number(num1);
+                var n2 = Number(num2);
+                var res1 = n1 - n2;
+                document.getElementById("reslt").innerHTML = '<br><center><b>RESULT: </b>' + res1 + '</center>';
+            }
+            multiplication() {
+                var num1 = document.getElementById("input3").value;
+                var num2 = document.getElementById("input4").value;
+                var n1 = Number(num1);
+                var n2 = Number(num2);
+                var res1 = n1 * n2;
+                document.getElementById("reslt").innerHTML = '<br><center><b>RESULT: </b>' + res1 + '</center>';
+            }
+            division() {
+                var num1 = document.getElementById("input3").value;
+                var num2 = document.getElementById("input4").value;
+                var n1 = Number(num1);
+                var n2 = Number(num2);
+                if (n2 != 0) {
+                    var res1 = n1 / n2;
+                    document.getElementById("reslt").innerHTML = '<br><center><b>RESULT: </b>' + res1 + '</center>';
+                }
+                else {
+                    document.getElementById("reslt").innerHTML = '<br><center><b>DIVISION NOT POSSIBLE</b></center>';
+                }
+            }
+            render() {
+                return (
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-6 ml-3 mr-3 bg-info">
+                                <br />
+                                <div><center><h1>BMI CALCULATOR</h1></center></div>
+                                <div class="mt-5">
+                                    <h4><label for="input1" class="form-label">WEIGHT (KG)</label></h4>
+                                    <input type="number" id="input1" class="form-control" placeholder="Weight in kg's" />
+                                    <br/>
+                                    <p>1 Pound=0.453592 Kg's</p>
+                                    </div>
+                                <div class="mt-5">
+                                    <h4><label for="input2" class="form-label">HEIGHT (METER)</label></h4>
+                                    <input type="number" id="input2" class="form-control" placeholder="Height in meter's" />
+                                    <br/>
+                                    <p>1 Feet=0.3048meters</p>
+                                    <p>1 Inch=0.0254meters</p>
+                                    <p>1 Centimeter=0.01meters</p>
+                                    </div>
+
+                                <div class="mt-5">
+                                    <button type="submit" class="btn btn-danger" onClick={this.result}>Submit</button>
+                                </div>
+                                <br/>
+                                <div id="resu"></div>
+                            </div>
+                            <div class="col-md-6 ml-3 mr-3">
+                                    <img src="bmi_img.png" class="img-fluid" alt="Responsive image"/>
+                            </div>
+                                
+                            <div class="col-md-6 ml-3 mr-3 bg-warning">
+                                <br />
+                                <div><center><h1>CALCULATOR</h1></center></div>
+                                <div class="mt-5">
+                                    <h4><label for="input3" class="form-label" >Enter a Number</label></h4>
+                                    <input type="number" id="input3" class="form-control" placeholder="Number" />
+                                </div>
+                                <div class="mt-5">
+                                    <h4><label for="input4" class="form-label">Enter a Number</label></h4>
+                                    <input type="number" id="input4" class="form-control" placeholder="Number" />
+                                </div>
+
+                                <div class="mt-5">
+                                    <center><button type="submit" class="btn btn-primary" onClick={this.addition}>Addition</button>
+                                    &emsp;<button type="submit" class="btn btn-dark" onClick={this.substraction}>Substraction</button>
+                                    &emsp;<button type="submit" class="btn btn-success" onClick={this.multiplication}>Multiplication</button>
+                                    &emsp;<button type="submit" class="btn btn-info" onClick={this.division}>Division</button></center>
+                                </div>
+                                
+                                <div id="reslt"></div>
+                                <br /><br /><br />
+                            </div>
+                            <div class="col-md-6 ml-3 mr-3">
+                                <img src="quote.png" class="img-fluid" alt="Responsive image" />
+                            </div>
+                        </div>
+                    </div>);
+            }
+        }
+        ReactDOM.render(<Bmi />, document.getElementById("bmi"));
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
