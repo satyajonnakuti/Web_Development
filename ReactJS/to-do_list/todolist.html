@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+
+  <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+
+  <title>To-do List</title>
+  <style>
+    #colo {
+      font-size: 30px;
+      font-family: serif;
+    }
+
+    h4 {
+      font-size: 40px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div id="todo"></div>
+      </div>
+    </div>
+  </div>
+  <script type="text/babel">
+
+    class Todo extends React.Component {
+      constructor(props) {
+        super(props);
+        this.state =
+        {
+          task: "",
+          date: "",
+          time: "",
+          list: [],
+          count: 0,
+        };
+      }
+
+      componentDidMount() {
+        var cnt = localStorage.getItem("count");
+        var list1 = localStorage.getItem("list");
+        var list2 = JSON.parse(list1);
+        // alert(list2 == null);
+        if(list2 != null){
+        list2.map((ele, index) => {
+          var today = new Date();
+          var year = today.getFullYear();
+          var month = today.getMonth() + 1;
+          if (month < 10) {
+            month = "0" + month;
+          }
+          var td = today.getDate();
+          if (td < 10) {
+            td = "0" + td;
+          }
+          var date = year + '-' + month + '-' + td;
+          if (date >= ele.date) {
+            if (date == ele.date) {
+              if (today.getHours() + ":" + today.getMinutes() >= ele.time) {
+                alert("task " + ele.task + " is being delted");
+                list2.splice(index, 1);
+                cnt -= 1;
+              }
+            }
+            else {
+              alert("task " + ele.task + " is being delted");
+              list2.splice(index, 1);
+              cnt -= 1;
+            }
+          }
+        });
+      }
+
+
+        if (cnt != null) {
+          this.setState({ count: parseInt(cnt), list: [...list2] });
+        }
+        window.addEventListener("beforeunload", () => {
+          localStorage.setItem("count", this.state.count);
+          // alert(this.state.list);
+          localStorage.setItem("list", JSON.stringify(this.state.list));
+        });
+      }
+
+      render() {
+        return (
+          <div class="container">
+            <div class="row">
+              <div class="col-6 bg-success">
+                <center>
+                  <h1>Enter details of a task</h1>
+                  <div class="form-group mt-5">
+                    <label for="exampleInputEmail1" id="colo">Enter Task Name</label>
+                    <input type="text" class="form-control mt-1" id="exampleInputEmail1" placeholder="Enter Task" onChange={this.read} value={this.state.task} />
+                  </div>
+                  <div class="form-group">
+                    <label for="example-date-input" id="colo">Submission Date</label>
+                    <input class="form-control" type="date" id="example-date-input" onChange={this.readdob} value={this.state.date} />
+                  </div>
+                  <div class="form-group">
+                    <label for="example-time-input" id="colo">Time (in 24hrs format)</label>
+                    <input class="form-control" type="time" onChange={this.readtime} value={this.state.time} id="example-time-input" />
+                  </div>
+                  <div><button type="submit" class="btn btn-warning mt-5" onClick={this.addtask}>Add to List</button></div>
+
+                  <div><h4 class="mt-5">Total Tasks Pending: {this.state.count}</h4></div>
+                  </center>
+                  </div>
+                  <div class="col-6 bg-warning">
+                  <div>
+
+                    <table class="table table-bordered mt-5 table-hover table-striped">
+                      <thead class="thead-light">
+                        <tr>
+                          <th colSpan="5" ><center>DETAILS OF TASKS PENDING</center></th>
+                        </tr>
+                        <tr>
+                          <th><center>TASK</center></th>
+                          <th><center>SUBMISSION DATE</center></th>
+                          <th><center>DEADLINE</center></th>
+                          <th colSpan="2"><center>OPERATIONS</center></th>
+                        </tr>
+                      </thead>
+
+                      <tbody>
+                        {this.state.list.map((ele, index) =>
+                          <tr key={index}>
+                            <td>{ele.task}</td>
+                            <td>{ele.date}</td>
+                            <td>{ele.time}</td>
+                            <td><center><button type="submit" class="btn btn-warning" onClick={this.deletetask} value={index} >Remove Task</button></center></td>
+                            <td><center><button type="submit" class="btn btn-warning" onClick={this.updatetask} value={index} >Update Task</button></center></td>
+                          </tr>
+                        )}
+                      </tbody>
+                    </table>
+                  </div>
+                
+              </div>
+              <div class="col-md-2"></div>
+            </div>
+          </div>
+        );
+      }
+
+      read = (event) => {
+
+        this.setState({ task: event.target.value });
+      };
+      readdob = (event) => {
+
+        this.setState({ date: event.target.value });
+      };
+      readtime = (event) => {
+
+        this.setState({ time: event.target.value });
+      };
+      addtask = () => {
+
+        this.setState({ list: [...this.state.list, { task: this.state.task, date: this.state.date, time: this.state.time }], task: "", date: "", time: "", count: this.state.count + 1 });
+        // this.setState({ dl: [...this.state.dl, this.state.date], date: "" });
+        // this.setState({ tl: [...this.state.tl, this.state.time], time: "" });
+      };
+      deletetask = (event) => {
+        const list = [...this.state.list];
+
+        list.splice(Number(event.target.value), 1);
+        console.log(list);
+        this.setState({ list: [...list], count: this.state.count - 1 })
+        console.log(event.target.value);
+
+      };
+      updatetask = (event) => {
+        localStorage.setItem("list", JSON.stringify(this.state.list));
+        ReactDOM.render(<Update numb={event.target.value} />, document.querySelector("#todo"));
+      };
+
+    }
+
+    ReactDOM.render(<Todo />, document.querySelector("#todo"));
+
+    class Update extends React.Component {
+
+      constructor() {
+        super();
+        this.state = {
+          changetask: "",
+          changedate: "",
+          changetime: "",
+          modifiedlist: []
+        };
+      }
+
+      componentDidMount() {
+        const newlist = localStorage.getItem("list");
+        const list1 = JSON.parse(newlist);
+        var ta = "";
+        var ti = "";
+        var dt = "";
+        list1.map((ele, index) => {
+          if (index == Number(this.props.numb)) {
+            ta = ele.task;
+            ti = ele.time;
+            dt = ele.date;
+          }
+        });
+        this.setState({ modifiedlist: [...list1], changetask: ta, changedate: dt, changetime: ti });
+
+        window.addEventListener("beforeunload", () => {
+
+
+          localStorage.setItem("list", JSON.stringify(this.state.modifiedlist));
+          ReactDOM.render(<Todo />, document.querySelector("#todo"));
+        });
+      }
+
+      render() {
+        return (
+          <div class="container">
+            <div class="row">
+              <div class="col-md-2"></div>
+              <div class="col-md-8 mt-3">
+                <center>
+                  <h1>Change required details of a task</h1>
+                  <div class="form-group mt-5">
+                    <label for="exampleInputEmail1" id="colo">Task Name</label>
+                    <input type="text" class="form-control mt-1" id="exampleInputEmail1" onChange={this.readnewtask} value={this.state.changetask} />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="example-date-input" id="colo">Submission Date</label>
+                    <input class="form-control" type="date" id="example-date-input" onChange={this.readnewdate} value={this.state.changedate} />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="example-time-input" id="colo">Time (in 24hrs format)</label>
+                    <input class="form-control" type="time" onChange={this.readnewtime} value={this.state.changetime} id="example-time-input" />
+                  </div>
+
+                  <div><button type="submit" class="btn btn-warning mt-5" onClick={this.change}>SAVE CHANGES</button></div>
+                </center>
+              </div>
+              <div class="col-md-2"></div>
+            </div>
+          </div>
+        );
+      }
+
+      readnewtask = (event) => {
+        this.setState({ changetask: event.target.value });
+      };
+
+      readnewtime = (event) => {
+        this.setState({ changetime: event.target.value });
+      };
+
+      readnewdate = (event) => {
+        this.setState({ changedate: event.target.value });
+      };
+
+
+      change = () => {
+
+        const oldlist = [...this.state.modifiedlist];
+        oldlist.map((ele, index) => {
+          if (index == Number(this.props.numb)) {
+            ele.task = this.state.changetask;
+            ele.date = this.state.changedate;
+            ele.time = this.state.changetime;
+          }
+        });
+        this.setState({ modifiedlist: [...oldlist] });
+      };
+    }
+  </script>
+
+
+  <!-- Optional JavaScript; choose one of the two! -->
+
+  <!-- Option 1: Bootstrap Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+    crossorigin="anonymous"></script>
+
+  <!-- Option 2: Separate Popper and Bootstrap JS -->
+  <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
+    -->
+</body>
+
+</html>
