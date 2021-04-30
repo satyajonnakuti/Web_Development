@@ -3,7 +3,6 @@ import {BrowserRouter as Router,Route,Link} from "react-router-dom";
 // import Connectfour from "./Connectfour";
 import Board from "./components/Board";
 // components/Board
-
 const Home=()=>{
     return (
     <div>
@@ -14,7 +13,7 @@ const Home=()=>{
       <ul>
         
         <h2>Description</h2>
-        {/* <img src={connect4} class="img"/> */}
+        
 
         <li>This game is played on a vertical board wich has 7 hollow columns and 6 rows.</li>
         <li>Each column has a hole in the upper part of the board, where pieces are introduced.</li> 
@@ -73,10 +72,10 @@ function SimpleExample(){
         <div id="buttons">
             <h1>Connect 4 Game</h1>
             <nav>
-                    {/* <button type="button" class="btn btn-primary"><h1><Link to="/">Home</Link></h1></button>
-                    <button type="button" class="btn btn-primary"><h1><Link to="/Game">It's Game Time</Link></h1></button> */}
-                <h1><Link to="/">Home</Link> &nbsp;&nbsp;&nbsp;
-                <Link to="/Game">It's Game Time</Link></h1>
+                    <button type="button" class="btn btn-primary"><h1><Link to="/">Home</Link></h1></button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <button type="button" class="btn btn-primary"><h1><Link to="/Game">It's Game Time</Link></h1></button>
+                    {/* <h1 class="text-success"><Link to="/" >Home</Link> &nbsp;&nbsp;&nbsp;
+                <Link to="/Game">It's Game Time</Link></h1> */}
                  
             </nav>
             <hr/>

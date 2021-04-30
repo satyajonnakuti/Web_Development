@@ -8,6 +8,7 @@ export default function App() {
   return (
     <div className="App">
       <h1>Connect Four Game</h1>
+      
       <Example />
     </div>
   );
