@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <title>To list</title>
+</head>
+<body>
+            <div id="app" />
+                <script type="text/babel">
+                    class App extends React.Component {
+                        constructor(props) {
+                            super(props);
+                            this.state = {
+                            tasks:[],
+                            input: "",
+                            period:[],
+                            count:0,
+                            index:-1,
+                            restore:[]
+                            };
+                        }
+                        render() {
+
+                            return (
+                                <div class="bg-info">
+                                    <br/>
+                                
+                                    <h1 class="text-center">Opportunities</h1> 
+                                    
+                                    <div class="container-fluid">
+                                        <div  class="row">
+                                            <div class="col-sm-6 addList bg-success" >
+                                                <table id="tasktable"   class="table table-hover" >
+                                                    <tbody>
+                                                        <div>
+                                                            <h3 class="text-center  ">What do you want to acheive?</h3>
+                                                            <input onChange={this.UpdateResponse} value={this.state.input}/>
+                                                            <button onClick={this.addTask} class="btn btn-warning"> Add Task</button>
+                                                        </div> 
+                                                        {this.state.tasks.map((task,i) =>
+                                                            <tr key={i}>
+
+                                                                <td class="text-light"><h4> {task}</h4></td>
+                                                                <td> {this.state.period}</td>
+                                                                <td>
+                                                                    <button  onClick={(event)=>{this.deleteTask(event,i)}}class="btn btn-danger">Remove</button>
+                                                                </td>
+                                                                <td> <button onClick={(event)=>{this.edit(event,i)}} class="btn btn-primary"> Edit </button> </td>
+                                                                <td><button onClick={this.Update} class="btn btn-warning"> Update </button></td>
+                                                            </tr>
+                                                        )} 
+                                                    </tbody>
+                                                    <h2> Number of tasks: {this.state.tasks.length}</h2>
+                                                </table>
+                                            </div>
+                                            <div class="col-sm-2 bin bg-warning">
+                                                <img src="img/bin.png" class="rounded float-left" alt="..." />
+
+                                            </div>    
+                                            <div class="col-sm-4 bin bg-warning">
+                                                
+                                                <table id="1">
+                                                    <thead>
+                                                        <h4 > Recycle Bin  </h4>
+                                                        
+                                                    </thead>
+                                                    <tbody>
+                                                        {this.state.restore.map((task,i) =>
+                                                            <tr key={i}>
+                                                                <td> {task}</td> &nbsp; &nbsp;
+                                                                <td> {this.state.period}</td>
+                                                                <td>
+                                                                <button  onClick={(event)=>{this.delete(event,i)}} class="btn btn-danger"> Delete </button> &nbsp;&nbsp;
+                                                                </td>
+                                                                <td>
+                                                                <button  onClick={(event)=>{this.restore(event,i)}} class="btn btn-success"> Restore</button>
+                                                                </td>
+                                                            </tr>
+                                                        )}  
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                            <div class="col bg-warning">
+                                                <img src="img/quote.png" class="img-fluid" alt="Responsive image"/>
+                                            </div>
+                                            <div class="col-sm-6 bg-success">
+                                                <img src="img/quote1.png" class="img-fluid" alt="Responsive image" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            );
+                        }
+                        restore=(event,i)=>{
+
+                            var n=[...this.state.restore]
+                            this.state.tasks=[...this.state.tasks,n.splice(i,1)]
+                            this.setState(state=>({
+                            restore:n,
+                            }));
+                            console.log(this.state.restore)
+
+                        }
+                        delete=(event)=>{
+                            var index =event.target.value
+                                var tasks_list= this.state.restore.splice(index, 1);
+                                this.setState({restore: this.state.restore});
+                                } 
+                        UpdateResponse=(event)=>{
+                            this.setState({
+                            input:event.target.value,
+                            });
+                        }
+                        addTask=(event)=>{
+                            if(this.state.input==""){
+                                    return;
+                                }
+                            this.setState(state=>({
+                            tasks:[...state.tasks,state.input],
+                            input:""
+                            }));
+                        }
+                        deleteTask=(event,i)=>{
+                            var n=[...this.state.tasks]
+                            this.state.restore=[...this.state.restore,n.splice(i,1)]
+                            this.setState(state=>({
+                            tasks:n,
+                            }));
+                            console.log(this.state.restore)
+                        }
+                        edit=(event,i)=>{
+                            this.setState({
+                            input:this.state.tasks[i],
+                            index:i
+                            })
+                        }
+                        Update=()=>{
+                            var n=[...this.state.tasks]
+                            n[this.state.index]=this.state.input
+                            this.setState({
+                            tasks:n,
+                            input:""
+                            })
+                        }
+                        gettasks = () => {
+                                fetch('https://raw.githubusercontent.com/iamsrikaryadav/ToDoList_REACT-JS-/main/test.json') 
+                                .then(resp => resp.json())
+                                .then(data => {
+                                    console.log(data[1]);
+                                    this.setState({tasks:data[1]});
+                                });
+                            }
+                            componentDidMount(){
+                                this.gettasks();
+                            }
+                    }
+                    ReactDOM.render(<App />, document.querySelector("#app"));
+                </script>
+        </div>
+    </div>
+</body>
+</html>

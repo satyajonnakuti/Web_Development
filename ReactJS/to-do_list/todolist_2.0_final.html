@@ -103,22 +103,22 @@
             <div class="row">
               <div class="col-6 bg-success">
                 <center>
-                  <h1>Enter details of a task</h1>
+                  <h1>To-Do-List</h1>
                   <div class="form-group mt-5">
-                    <label for="exampleInputEmail1" id="colo">Enter Task Name</label>
+                    <label for="exampleInputEmail1" id="colo">Enter the Task details</label>
                     <input type="text" class="form-control mt-1" id="exampleInputEmail1" placeholder="Enter Task" onChange={this.read} value={this.state.task} />
                   </div>
                   <div class="form-group">
-                    <label for="example-date-input" id="colo">Submission Date</label>
+                    <label for="example-date-input" id="colo">Deadline Date</label>
                     <input class="form-control" type="date" id="example-date-input" onChange={this.readdob} value={this.state.date} />
                   </div>
                   <div class="form-group">
-                    <label for="example-time-input" id="colo">Time (in 24hrs format)</label>
+                    <label for="example-time-input" id="colo">Deadline Time (in 24hrs format)</label>
                     <input class="form-control" type="time" onChange={this.readtime} value={this.state.time} id="example-time-input" />
                   </div>
                   <div><button type="submit" class="btn btn-warning mt-5" onClick={this.addtask}>Add to List</button></div>
 
-                  <div><h4 class="mt-5">Total Tasks Pending: {this.state.count}</h4></div>
+                  <div><h4 class="mt-5">Pending Tasks Count: {this.state.count}</h4></div>
                   </center>
                   </div>
                   <div class="col-6 bg-warning">
@@ -127,13 +127,13 @@
                     <table class="table table-bordered mt-5 table-hover table-striped">
                       <thead class="thead-light">
                         <tr>
-                          <th colSpan="5" ><center>DETAILS OF TASKS PENDING</center></th>
+                          <th colSpan="5" ><center>Details of the Tasks</center></th>
                         </tr>
                         <tr>
-                          <th><center>TASK</center></th>
-                          <th><center>SUBMISSION DATE</center></th>
-                          <th><center>DEADLINE</center></th>
-                          <th colSpan="2"><center>OPERATIONS</center></th>
+                          <th><center>task</center></th>
+                          <th><center>Deadline Date</center></th>
+                          <th><center>Deadline Time</center></th>
+                          <th colSpan="2"><center>Status</center></th>
                         </tr>
                       </thead>
 
@@ -143,8 +143,8 @@
                             <td>{ele.task}</td>
                             <td>{ele.date}</td>
                             <td>{ele.time}</td>
-                            <td><center><button type="submit" class="btn btn-warning" onClick={this.deletetask} value={index} >Remove Task</button></center></td>
-                            <td><center><button type="submit" class="btn btn-warning" onClick={this.updatetask} value={index} >Update Task</button></center></td>
+                            <td><center><button type="submit" class="btn btn-danger" onClick={this.deletetask} value={index} >Remove Task</button></center></td>
+ 
                           </tr>
                         )}
                       </tbody>
