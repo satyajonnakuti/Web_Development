@@ -2,22 +2,22 @@
   {
     "userId": 1,
     "id": 1,
-    "title": "modlue-1",
-    "url":  "https://www.youtube.com/embed/tgbNymZ7vqY",
-    "body": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto"
+    "title": "Python Variables",
+    "url":  "https://www.youtube.com/embed/cQT33yu9pY8",
+    "body": "This video gives an understanding on what are variables and how they are defined"
   },
   {
     "userId": 1,
     "id": 2,
-    "title": "modlue-2",
-    "url":  "https://www.youtube.com/embed/tgbNymZ7vqY",
-    "body": "est rerum tempore vitae\nsequi sint nihil reprehenderit dolor beatae ea dolores neque\nfugiat blanditiis voluptate porro vel nihil molestiae ut reiciendis\nqui aperiam non debitis possimus qui neque nisi nulla"
+    "title": "Conditional Branching",
+    "url":  "https://www.youtube.com/embed/Zp5MuPOtsSY",
+    "body": "This video gives an understanding on how to use conditional statements"
   },
   {
     "userId": 1,
     "id": 3,
     "title": "modlue-3",
-    "url":  "https://www.youtube.com/embed/tgbNymZ7vqY",
-    "body": "et iusto sed quo iure\nvoluptatem occaecati omnis eligendi aut ad\nvoluptatem doloribus vel accusantium quis pariatur\nmolestiae porro eius odio et labore et velit aut"
+    "url":  "https://www.youtube.com/embed/u-OmVr_fT4s",
+    "body": "This video gives us an understanding on how to implement functions"
   }
 ]
