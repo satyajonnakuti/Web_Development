@@ -1,0 +1,23 @@
+[
+  {
+    "userId": 1,
+    "id": 1,
+    "title": "Python Variables",
+    "url":  "https://www.youtube.com/embed/cQT33yu9pY8",
+    "body": "This video gives an understanding on what are variables and how they are defined"
+  },
+  {
+    "userId": 1,
+    "id": 2,
+    "title": "Conditional Branching",
+    "url":  "https://www.youtube.com/embed/Zp5MuPOtsSY",
+    "body": "This video gives an understanding on how to use conditional statements"
+  },
+  {
+    "userId": 1,
+    "id": 3,
+    "title": "Functions",
+    "url":  "https://www.youtube.com/embed/u-OmVr_fT4s",
+    "body": "This video gives us an understanding on how to implement functions"
+  }
+]
