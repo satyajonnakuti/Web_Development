@@ -30,79 +30,122 @@
                             restore:[]
                             };
                         }
-                        render() {
+                        // render() {
 
-                            return (
-                                <div class="bg-info">
-                                    <br/>
+                        //     return (
+                        //         <div class="bg-info">
+                        //             <br/>
                                 
-                                    <h1 class="text-center">Opportunities</h1> 
+                        //             <h1 class="text-center">Opportunities</h1> 
                                     
-                                    <div class="container-fluid">
-                                        <div  class="row">
-                                            <div class="col-sm-6 addList bg-success" >
-                                                <table id="tasktable"   class="table table-hover" >
-                                                    <tbody>
-                                                        <div>
-                                                            <h3 class="text-center  ">What do you want to acheive?</h3>
-                                                            <input onChange={this.UpdateResponse} value={this.state.input}/>
-                                                            <button onClick={this.addTask} class="btn btn-warning"> Add Task</button>
-                                                        </div> 
-                                                        {this.state.tasks.map((task,i) =>
-                                                            <tr key={i}>
+                        //             <div class="container-fluid">
+                        //                 <div  class="row">
+                        //                     <div class="col-sm-6 addList bg-success" >
+                        //                         <table id="tasktable"   class="table table-hover" >
+                        //                             <tbody>
+                        //                                 <div>
+                        //                                     <h3 class="text-center  ">What do you want to acheive?</h3>
+                        //                                     <input onChange={this.UpdateResponse} value={this.state.input}/>
+                        //                                     <button onClick={this.addTask} class="btn btn-warning"> Add Task</button>
+                        //                                 </div> 
+                        //                                 {this.state.tasks.map((task,i) =>
+                        //                                     <tr key={i}>
 
-                                                                <td class="text-light"><h4> {task}</h4></td>
-                                                                <td> {this.state.period}</td>
-                                                                <td>
-                                                                    <button  onClick={(event)=>{this.deleteTask(event,i)}}class="btn btn-danger">Remove</button>
-                                                                </td>
-                                                                <td> <button onClick={(event)=>{this.edit(event,i)}} class="btn btn-primary"> Edit </button> </td>
-                                                                <td><button onClick={this.Update} class="btn btn-warning"> Update </button></td>
-                                                            </tr>
-                                                        )} 
-                                                    </tbody>
-                                                    <h2> Number of tasks: {this.state.tasks.length}</h2>
-                                                </table>
-                                            </div>
-                                            <div class="col-sm-2 bin bg-warning">
-                                                <img src="img/bin.png" class="rounded float-left" alt="..." />
+                        //                                         <td class="text-light"><h4> {task}</h4></td>
+                        //                                         <td> {this.state.period}</td>
+                        //                                         <td>
+                        //                                             <button  onClick={(event)=>{this.deleteTask(event,i)}}class="btn btn-danger">Remove</button>
+                        //                                         </td>
+                        //                                         <td> <button onClick={(event)=>{this.edit(event,i)}} class="btn btn-primary"> Edit </button> </td>
+                        //                                         <td><button onClick={this.Update} class="btn btn-warning"> Update </button></td>
+                        //                                     </tr>
+                        //                                 )} 
+                        //                             </tbody>
+                        //                             <h2> Number of tasks: {this.state.tasks.length}</h2>
+                        //                         </table>
+                        //                     </div>
+                        //                     <div class="col-sm-2 bin bg-warning">
+                        //                         <img src="img/bin.png" class="rounded float-left" alt="..." />
 
-                                            </div>    
-                                            <div class="col-sm-4 bin bg-warning">
+                        //                     </div>    
+                        //                     <div class="col-sm-4 bin bg-warning">
                                                 
-                                                <table id="1">
-                                                    <thead>
-                                                        <h4 > Recycle Bin  </h4>
+                        //                         <table id="1">
+                        //                             <thead>
+                        //                                 <h4 > Recycle Bin  </h4>
                                                         
-                                                    </thead>
-                                                    <tbody>
-                                                        {this.state.restore.map((task,i) =>
-                                                            <tr key={i}>
-                                                                <td> {task}</td> &nbsp; &nbsp;
-                                                                <td> {this.state.period}</td>
-                                                                <td>
-                                                                <button  onClick={(event)=>{this.delete(event,i)}} class="btn btn-danger"> Delete </button> &nbsp;&nbsp;
-                                                                </td>
-                                                                <td>
-                                                                <button  onClick={(event)=>{this.restore(event,i)}} class="btn btn-success"> Restore</button>
-                                                                </td>
-                                                            </tr>
-                                                        )}  
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                            <div class="col bg-warning">
-                                                <img src="img/quote.png" class="img-fluid" alt="Responsive image"/>
-                                            </div>
-                                            <div class="col-sm-6 bg-success">
-                                                <img src="img/quote1.png" class="img-fluid" alt="Responsive image" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                        //                             </thead>
+                        //                             <tbody>
+                        //                                 {this.state.restore.map((task,i) =>
+                        //                                     <tr key={i}>
+                        //                                         <td> {task}</td> &nbsp; &nbsp;
+                        //                                         <td> {this.state.period}</td>
+                        //                                         <td>
+                        //                                         <button  onClick={(event)=>{this.delete(event,i)}} class="btn btn-danger"> Delete </button> &nbsp;&nbsp;
+                        //                                         </td>
+                        //                                         <td>
+                        //                                         <button  onClick={(event)=>{this.restore(event,i)}} class="btn btn-success"> Restore</button>
+                        //                                         </td>
+                        //                                     </tr>
+                        //                                 )}  
+                        //                             </tbody>
+                        //                         </table>
+                        //                     </div>
+                        //                     <div class="col bg-warning">
+                        //                         <img src="img/quote.png" class="img-fluid" alt="Responsive image"/>
+                        //                     </div>
+                        //                     <div class="col-sm-6 bg-success">
+                        //                         <img src="img/quote1.png" class="img-fluid" alt="Responsive image" />
+                        //                     </div>
+                        //                 </div>
+                        //             </div>
+                        //         </div>
                                 
-                            );
-                        }
+                        //     );
+                        // }
+                        render() {
+                                    // HERE WE MAKE OUR LIST OF OBJECTS
+                                    const soldierList = this.state.contracts.length ? this.state.contracts.map((data, i) => {
+                                        return (
+                                            <TouchableOpacity
+                                                key={i}
+                                            >
+                                                <View
+                                                    style={{
+                                                        flexDirection: 'row',
+                                                        justifyContent: 'flex-start',
+                                                        paddingTop: 5,
+                                                        paddingBottom: 5,
+                                                    }}
+                                                >
+                                                    <Text style={{ fontFamily: 'Gotham-Medium', color: '#8DA8C7' }}>
+                                                        {dateShort(data.datestart)}
+                                                    </Text>
+                                                </View>
+                                                <View style={{ flexDirection: 'row', right: 0, position: 'absolute', bottom: 5 }}>
+                                                    <MaterialCommunityIcons
+                                                        name="cross"
+                                                        style={{ color: '#0261D2', lineHeight: 20 }}
+                                                    />
+                                                </View>
+          </View>
+        </TouchableOpacity >
+      );
+                                }) : (
+                                    <View style={{ alignItems: 'center' }}>
+                                        <Text style={{ fontWeight: 'bold', color: '#0361d2', fontFamily: 'Gotham-Medium' }}>
+                                            Empty list !!!
+        </Text>
+                                    </View>
+                                );
+
+                            // NOW WE CAN DISPLAY IT, IF THE LIST IS EMPTY WE GOT THE EMPTY LIST MESSAGE
+                            return (
+                                <ScrollView style={{ backgroundColor: '#f6f6f6', height: '100%', width: '100%' }}>
+                                    {soldierList}
+                                </ScrollView>
+                            ); 
+ }
                         restore=(event,i)=>{
 
                             var n=[...this.state.restore]

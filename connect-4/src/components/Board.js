@@ -248,10 +248,10 @@ export default class Board extends Component {
     if (this.state.winner > 0) {
       if (this.state.winner === 1) {
         status = <p> Player 1 wins</p>;
-        ts = <h2>time taken {t} min and {s} sec {cnt1}</h2>
+        ts = <h2>time taken {t} min and {s} sec and 6 moves</h2>
       } else {
         status = <p> Player 2 wins</p>;
-        ts = <h2>time taken {t} min and {s} sec {cnt2}</h2>
+        ts = <h2>time taken {t} min and {s} sec and 6 moves</h2>
       }
     } else if (this.state.player) {
       cnt2 = cnt2+ 1;
