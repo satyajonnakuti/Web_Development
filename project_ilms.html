@@ -40,7 +40,7 @@
             background-color: white;
             top: 0;
             bottom: 0;
-            left: 50%;
+            left: 31px;
             margin-left: -3px;
         }
 
@@ -49,7 +49,7 @@
             padding: 10px 40px;
             position: relative;
             background-color: inherit;
-            width: 50%;
+            width: 100%;
         }
 
         /* The circles on the timeline */
@@ -68,12 +68,12 @@
 
         /* Place the container to the left */
         .left {
-            left: -25.4%;
+            left: 0%;
         }
 
         /* Place the container to the right */
         .right {
-            left: 25.4%;
+            left: 0%;
         }
 
         /* Add arrows to the left container (pointing right) */
@@ -106,7 +106,7 @@
 
         /* Fix the circle for containers on the right side */
         .right::after {
-            left: -16px;
+            left: 15px;
         }
 
         /* The actual content */
@@ -178,7 +178,7 @@ img {
 
 /* Slideshow container */
 .slideshow-container {
-    max-width: 400px;
+    max-width: 800px;
     position: relative;
     margin: auto;
 }
@@ -277,7 +277,7 @@ img {
     
 
     <div class="timeline">
-        <div class="container left">
+        <div class="container right">
             <div class="content">
                 
                 <h2>Sprint-1</h2>
@@ -337,31 +337,31 @@ img {
                 
                 <div class="mySlides fade">
                                         <div class="numbertext">1 / 5</div>
-                                        <img src="sprint1.1.png"  class="img-fluid" style="width:400px;height:300px">
+                                        <img src="sprint1.1.png"  class="img-fluid" style="width:800px;height:400px">
                                         <div class="text">Screen 1</div>
                                     </div>
                                 
                                     <div class="mySlides fade">
                                         <div class="numbertext">2 / 5</div>
-                                        <img src="sprint1.2.png" class="img-fluid" style="width:400px;height:300px">
+                                        <img src="sprint1.2.png" class="img-fluid" style="width:800px;height:400px">
                                         <div class="text">Screen 2</div>
                                     </div>
                                 
                                     <div class="mySlides fade">
                                         <div class="numbertext">3 / 5</div>
-                                        <img src="sprint1.3.png" class="img-fluid" style="width:400px;height:300px">
+                                        <img src="sprint1.3.png" class="img-fluid" style="width:800px;height:400px">
                                         <div class="text">Screen 3</div>
                                     </div>
                 
                                     <div class="mySlides fade">
                                         <div class="numbertext">4 / 5</div>
-                                        <img src="knowlege graph diagram.png" class="img-fluid" style="width:400px;height:300px">
+                                        <img src="knowlege graph diagram.png" class="img-fluid" style="width:800px;height:400px">
                                         <div class="text">knowlege Graph idea</div>
                                     </div>
                 
                                     <div class="mySlides fade">
                                         <div class="numbertext">5 / 5</div>
-                                        <img src="sketchpra.png" class="img-fluid" style="width:400px;height:300px">
+                                        <img src="sketchpra.png" class="img-fluid" style="width:800px;height:400px">
                                         <div class="text">Sketches by praveen sir</div>
                                     </div>
                 
@@ -399,34 +399,24 @@ img {
                 <div class="slideshow-container" data-cycle="2000">
                 
                     <div class="mySlides fade">
-                        <div class="numbertext">1 / 5</div>
-                        <img src="sprint1.1.png" class="img-fluid" style="width:400px;height:300px">
-                        <div class="text">Screen 1</div>
+                        <div class="numbertext">1 / 3</div>
+                        <img src="sprint6.0.png" style="width:600px;height:300px">
+                        <div class="text">Merged all the active user stories to master branch</div>
                     </div>
                 
                     <div class="mySlides fade">
-                        <div class="numbertext">2 / 5</div>
-                        <img src="sprint1.2.png" class="img-fluid" style="width:400px;height:300px">
-                        <div class="text">Screen 2</div>
+                        <div class="numbertext">2 / 3</div>
+                        <img src="sprint6.1.png" class="img-fluid" style="width:500px;height:300px">
+                        <div class="text">Before adding listing</div>
                     </div>
                 
                     <div class="mySlides fade">
-                        <div class="numbertext">3 / 5</div>
-                        <img src="sprint1.3.png" class="img-fluid" style="width:400px;height:300px">
-                        <div class="text">Screen 3</div>
+                        <div class="numbertext">3 / 3</div>
+                        <img src="sprint6.2.png" class="img-fluid" style="width:500px;height:300px">
+                        <div class="text">Added the listing functionality</div>
                     </div>
                 
-                    <div class="mySlides fade">
-                        <div class="numbertext">4 / 5</div>
-                        <img src="knowlege graph diagram.png" class="img-fluid" style="width:400px;height:300px">
-                        <div class="text">knowlege Graph idea</div>
-                    </div>
                 
-                    <div class="mySlides fade">
-                        <div class="numbertext">5 / 5</div>
-                        <img src="sketchpra.png" class="img-fluid" style="width:400px;height:300px">
-                        <div class="text">Sketches by praveen sir</div>
-                    </div>
                 
                 </div>
                 <p><b>Duration:</b> 10-05-2021 to 15-05-2021</p>
@@ -435,40 +425,30 @@ img {
                 <p><b>Work Done:</b> As a team we worked on the given user story to display a box where a student can view the learning objectives of the current day. We were able to fetch the learning objectives data stored in a JSON file and display them as a list.But, failed to implement navigation to next page using a button.</p>
                 </div>
         </div>
-        <div class="container left">
+        <div class="container right">
             <div class="content">
             <h2>Sprint-3</h2>
             <div class="slideshow-container" data-cycle="2000">
             
                 <div class="mySlides fade">
-                    <div class="numbertext">1 / 5</div>
-                    <img src="sprint1.1.png" class="img-fluid" style="width:400px;height:300px">
-                    <div class="text">Screen 1</div>
+                    <div class="numbertext">1 / 3</div>
+                    <img src="sprint6.0.png" style="width:600px;height:300px">
+                    <div class="text">Merged all the active user stories to master branch</div>
                 </div>
             
                 <div class="mySlides fade">
-                    <div class="numbertext">2 / 5</div>
-                    <img src="sprint1.2.png" class="img-fluid" style="width:400px;height:300px">
-                    <div class="text">Screen 2</div>
+                    <div class="numbertext">2 / 3</div>
+                    <img src="sprint6.1.png" class="img-fluid" style="width:500px;height:300px">
+                    <div class="text">Before adding listing</div>
                 </div>
             
                 <div class="mySlides fade">
-                    <div class="numbertext">3 / 5</div>
-                    <img src="sprint1.3.png" class="img-fluid" style="width:400px;height:300px">
-                    <div class="text">Screen 3</div>
+                    <div class="numbertext">3 / 3</div>
+                    <img src="sprint6.2.png" class="img-fluid" style="width:500px;height:300px">
+                    <div class="text">Added the listing functionality</div>
                 </div>
             
-                <div class="mySlides fade">
-                    <div class="numbertext">4 / 5</div>
-                    <img src="knowlege graph diagram.png" class="img-fluid" style="width:400px;height:300px">
-                    <div class="text">knowlege Graph idea</div>
-                </div>
             
-                <div class="mySlides fade">
-                    <div class="numbertext">5 / 5</div>
-                    <img src="sketchpra.png" class="img-fluid" style="width:400px;height:300px">
-                    <div class="text">Sketches by praveen sir</div>
-                </div>
             
             </div>
             <p><b>Duration:</b> 17-05-2021 to 22-05-2021</p>
@@ -483,34 +463,24 @@ img {
                 <div class="slideshow-container" data-cycle="2000">
                 
                     <div class="mySlides fade">
-                        <div class="numbertext">1 / 5</div>
-                        <img src="sprint1.1.png" class="img-fluid" style="width:400px;height:300px">
-                        <div class="text">Screen 1</div>
+                        <div class="numbertext">1 / 3</div>
+                        <img src="sprint6.0.png" style="width:600px;height:300px">
+                        <div class="text">Merged all the active user stories to master branch</div>
                     </div>
                 
                     <div class="mySlides fade">
-                        <div class="numbertext">2 / 5</div>
-                        <img src="sprint1.2.png" class="img-fluid" style="width:400px;height:300px">
-                        <div class="text">Screen 2</div>
+                        <div class="numbertext">2 / 3</div>
+                        <img src="sprint6.1.png" class="img-fluid" style="width:500px;height:300px">
+                        <div class="text">Before adding listing</div>
                     </div>
                 
                     <div class="mySlides fade">
-                        <div class="numbertext">3 / 5</div>
-                        <img src="sprint1.3.png" class="img-fluid" style="width:400px;height:300px">
-                        <div class="text">Screen 3</div>
+                        <div class="numbertext">3 / 3</div>
+                        <img src="sprint6.2.png" class="img-fluid" style="width:500px;height:300px">
+                        <div class="text">Added the listing functionality</div>
                     </div>
                 
-                    <div class="mySlides fade">
-                        <div class="numbertext">4 / 5</div>
-                        <img src="knowlege graph diagram.png" class="img-fluid" style="width:400px;height:300px">
-                        <div class="text">knowlege Graph idea</div>
-                    </div>
                 
-                    <div class="mySlides fade">
-                        <div class="numbertext">5 / 5</div>
-                        <img src="sketchpra.png" class="img-fluid" style="width:400px;height:300px">
-                        <div class="text">Sketches by praveen sir</div>
-                    </div>
                 
                 </div>
                 <p><b>Duration:</b> 24-05-2021 to 29-05-2021</p>
@@ -519,40 +489,30 @@ img {
                 <p><b>Work Done:</b> We have successfully created branches with respect to the user stories and updated the code in respective branches.</p>
                 </div>
         </div>
-        <div class="container left">
+        <div class="container right">
             <div class="content">
                 <h2>Sprint-5</h2>
                 <div class="slideshow-container" data-cycle="2000">
                 
                     <div class="mySlides fade">
-                        <div class="numbertext">1 / 5</div>
-                        <img src="sprint1.1.png" class="img-fluid" style="width:400px;height:300px">
-                        <div class="text">Screen 1</div>
+                        <div class="numbertext">1 / 3</div>
+                        <img src="sprint6.0.png" style="width:600px;height:300px">
+                        <div class="text">Merged all the active user stories to master branch</div>
                     </div>
                 
                     <div class="mySlides fade">
-                        <div class="numbertext">2 / 5</div>
-                        <img src="sprint1.2.png" class="img-fluid" style="width:400px;height:300px">
-                        <div class="text">Screen 2</div>
+                        <div class="numbertext">2 / 3</div>
+                        <img src="sprint6.1.png" class="img-fluid" style="width:500px;height:300px">
+                        <div class="text">Before adding listing</div>
                     </div>
                 
                     <div class="mySlides fade">
-                        <div class="numbertext">3 / 5</div>
-                        <img src="sprint1.3.png" class="img-fluid" style="width:400px;height:300px">
-                        <div class="text">Screen 3</div>
+                        <div class="numbertext">3 / 3</div>
+                        <img src="sprint6.2.png" class="img-fluid" style="width:500px;height:300px">
+                        <div class="text">Added the listing functionality</div>
                     </div>
                 
-                    <div class="mySlides fade">
-                        <div class="numbertext">4 / 5</div>
-                        <img src="knowlege graph diagram.png" class="img-fluid" style="width:400px;height:300px">
-                        <div class="text">knowlege Graph idea</div>
-                    </div>
                 
-                    <div class="mySlides fade">
-                        <div class="numbertext">5 / 5</div>
-                        <img src="sketchpra.png" class="img-fluid" style="width:400px;height:300px">
-                        <div class="text">Sketches by praveen sir</div>
-                    </div>
                 
                 </div>
                 <p><b>Duration:</b> 31-05-2021 to 5-06-2021</p>
@@ -567,34 +527,24 @@ img {
                 <div class="slideshow-container" data-cycle="2000">
                 
                     <div class="mySlides fade">
-                        <div class="numbertext">1 / 5</div>
-                        <img src="sprint1.1.png" class="img-fluid" style="width:400px;height:300px">
-                        <div class="text">Screen 1</div>
+                        <div class="numbertext">1 / 3</div>
+                        <img src="sprint6.0.png" style="width:800px;height:400px">
+                        <div class="text">Merged all the active user stories to master branch</div>
                     </div>
                 
                     <div class="mySlides fade">
-                        <div class="numbertext">2 / 5</div>
-                        <img src="sprint1.2.png" class="img-fluid" style="width:400px;height:300px">
-                        <div class="text">Screen 2</div>
+                        <div class="numbertext">2 / 3</div>
+                        <img src="sprint6.1.png" class="img-fluid" style="width:800px;height:400px">
+                        <div class="text">Before adding listing</div>
                     </div>
                 
                     <div class="mySlides fade">
-                        <div class="numbertext">3 / 5</div>
-                        <img src="sprint1.3.png" class="img-fluid" style="width:400px;height:300px">
-                        <div class="text">Screen 3</div>
+                        <div class="numbertext">3 / 3</div>
+                        <img src="sprint6.2.png" class="img-fluid" style="width:800px;height:400px">
+                        <div class="text">Added the listing functionality</div>
                     </div>
                 
-                    <div class="mySlides fade">
-                        <div class="numbertext">4 / 5</div>
-                        <img src="knowlege graph diagram.png" class="img-fluid" style="width:400px;height:300px">
-                        <div class="text">knowlege Graph idea</div>
-                    </div>
-                
-                    <div class="mySlides fade">
-                        <div class="numbertext">5 / 5</div>
-                        <img src="sketchpra.png" class="img-fluid" style="width:400px;height:300px">
-                        <div class="text">Sketches by praveen sir</div>
-                    </div>
+                    
                 
                 </div>
                 <p><b>Duration:</b> 07-06-2021 to 12-06-2021</p>
@@ -603,40 +553,30 @@ img {
                 <p><b>Work Done:</b> </p>Merged the user stories into the main branch and added the ordered list functionality to the recomendations.
                 </div>
         </div>
-        <div class="container left">
+        <div class="container right">
             <div class="content">
                 <h2>Sprint-7</h2>
                 <div class="slideshow-container" data-cycle="2000">
                 
                     <div class="mySlides fade">
-                        <div class="numbertext">1 / 5</div>
-                        <img src="sprint1.1.png" class="img-fluid" style="width:400px;height:300px">
-                        <div class="text">Screen 1</div>
+                        <div class="numbertext">1 / 3</div>
+                        <img src="sprint6.0.png" style="width:600px;height:300px">
+                        <div class="text">Merged all the active user stories to master branch</div>
                     </div>
                 
                     <div class="mySlides fade">
-                        <div class="numbertext">2 / 5</div>
-                        <img src="sprint1.2.png" class="img-fluid" style="width:400px;height:300px">
-                        <div class="text">Screen 2</div>
+                        <div class="numbertext">2 / 3</div>
+                        <img src="sprint6.1.png" class="img-fluid" style="width:500px;height:300px">
+                        <div class="text">Before adding listing</div>
                     </div>
                 
                     <div class="mySlides fade">
-                        <div class="numbertext">3 / 5</div>
-                        <img src="sprint1.3.png" class="img-fluid" style="width:400px;height:300px">
-                        <div class="text">Screen 3</div>
+                        <div class="numbertext">3 / 3</div>
+                        <img src="sprint6.2.png" class="img-fluid" style="width:500px;height:300px">
+                        <div class="text">Added the listing functionality</div>
                     </div>
                 
-                    <div class="mySlides fade">
-                        <div class="numbertext">4 / 5</div>
-                        <img src="knowlege graph diagram.png" class="img-fluid" style="width:400px;height:300px">
-                        <div class="text">knowlege Graph idea</div>
-                    </div>
                 
-                    <div class="mySlides fade">
-                        <div class="numbertext">5 / 5</div>
-                        <img src="sketchpra.png" class="img-fluid" style="width:400px;height:300px">
-                        <div class="text">Sketches by praveen sir</div>
-                    </div>
                 
                 </div>
                 <p><b>Duration:</b> 14-06-2021 to 19-06-2021</p>
@@ -651,34 +591,24 @@ img {
                 <div class="slideshow-container" data-cycle="2000">
                 
                     <div class="mySlides fade">
-                        <div class="numbertext">1 / 5</div>
-                        <img src="sprint1.1.png" class="img-fluid" style="width:400px;height:300px">
-                        <div class="text">Screen 1</div>
+                        <div class="numbertext">1 / 3</div>
+                        <img src="sprint6.0.png" style="width:600px;height:300px">
+                        <div class="text">Merged all the active user stories to master branch</div>
                     </div>
                 
                     <div class="mySlides fade">
-                        <div class="numbertext">2 / 5</div>
-                        <img src="sprint1.2.png" class="img-fluid" style="width:400px;height:300px">
-                        <div class="text">Screen 2</div>
+                        <div class="numbertext">2 / 3</div>
+                        <img src="sprint6.1.png" class="img-fluid" style="width:500px;height:300px">
+                        <div class="text">Before adding listing</div>
                     </div>
                 
                     <div class="mySlides fade">
-                        <div class="numbertext">3 / 5</div>
-                        <img src="sprint1.3.png" class="img-fluid" style="width:400px;height:300px">
-                        <div class="text">Screen 3</div>
+                        <div class="numbertext">3 / 3</div>
+                        <img src="sprint6.2.png" class="img-fluid" style="width:500px;height:300px">
+                        <div class="text">Added the listing functionality</div>
                     </div>
                 
-                    <div class="mySlides fade">
-                        <div class="numbertext">4 / 5</div>
-                        <img src="knowlege graph diagram.png" class="img-fluid" style="width:400px;height:300px">
-                        <div class="text">knowlege Graph idea</div>
-                    </div>
                 
-                    <div class="mySlides fade">
-                        <div class="numbertext">5 / 5</div>
-                        <img src="sketchpra.png" class="img-fluid" style="width:400px;height:300px">
-                        <div class="text">Sketches by praveen sir</div>
-                    </div>
                 
                 </div>
                 <p><b>Duration:</b> 21-06-2021 to 26-06-2021</p>
